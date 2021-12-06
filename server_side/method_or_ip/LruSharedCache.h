@@ -327,4 +327,8 @@ void updateLimitData(time_t &nowTime, LimitData &data);                         
 bool methodLimitCheck(const uint32_t& methodId, const uint32_t& limitPerSec);    //检查给定请求methodid, 是否超过了给定的每秒请求次数限制
 bool ipLimitCheck(const std::string& remoteIp, const Limit& limit);              //检查给定请求ip, 是否超过了给定的请求次数限制
 
+extern LruSharedCache<MethodLimitKey, LimitData> g_MethodLimit;
+extern LruSharedCache<IpLimitKey, LimitData> g_IpLimit;
+
+extern Limit g_oIpLimit;
 #endif //METHOD_OR_IP_LRUSHAREDCACHE_H
