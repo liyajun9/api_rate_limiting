@@ -31,6 +31,6 @@
 *.out
 *.app
 
-server_side/method_or_ip/cmake-buid-debug/
+cmake-buid-debug/
 .idea/
 CMakeLists.txt
