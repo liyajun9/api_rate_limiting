@@ -8,6 +8,7 @@
 #include <sys/shm.h>
 #include <iostream>
 #include <cstring>
+#include "TimeTransformer.h"
 
 enum LRU_CACHE_ERROR_E  //错误码
 {
@@ -97,7 +98,7 @@ template<class K, class V>
 class LruSharedCache
 {
 public:
-    LruSharedCache() : m_pMutex(NULL), m_pSharedMem(NULL), m_pHead(NULL), m_pTail(NULL), m_shmid(0), m_initialized(false)
+    LruSharedCache() : m_pMutex(NULL), m_pHead(NULL), m_pTail(NULL), m_shmid(0), m_pSharedMem(NULL), m_initialized(false)
     {
     }
 
@@ -321,5 +322,9 @@ private:
 };
 
 
+void updateLimitData(time_t &nowTime, LimitData &data);                          //收到一个请求时, 更新统计数据
+
+bool methodLimitCheck(const uint32_t& methodId, const uint32_t& limitPerSec);    //检查给定请求methodid, 是否超过了给定的每秒请求次数限制
+bool ipLimitCheck(const std::string& remoteIp, const Limit& limit);              //检查给定请求ip, 是否超过了给定的请求次数限制
 
 #endif //METHOD_OR_IP_LRUSHAREDCACHE_H
