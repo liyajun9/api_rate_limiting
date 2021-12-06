@@ -11,7 +11,7 @@
 
 enum LRU_CACHE_ERROR_E  //错误码
 {
-    LRU_CACHE_OK,
+    LRU_CACHE_OK,               //ok
     LRU_CACHE_DATA_NOT_FOUND,   //未找到相应缓存数据
     LRU_CACHE_LOCK_ERROR,       //请求互斥锁失败
     LRU_CACHE_MAX = 1000
