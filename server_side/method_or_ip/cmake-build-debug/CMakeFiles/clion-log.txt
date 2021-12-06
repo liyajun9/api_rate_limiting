@@ -1,4 +1,0 @@
-/opt/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/cc -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/ralph/CLionProjects/api_rate_limiting/server_side/method_or_ip
--- Configuring done
--- Generating done
--- Build files have been written to: /home/ralph/CLionProjects/api_rate_limiting/server_side/method_or_ip/cmake-build-debug
